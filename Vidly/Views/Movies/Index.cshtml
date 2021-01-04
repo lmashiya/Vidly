@@ -1,0 +1,20 @@
+﻿@using Vidly.Models
+@model Vidly.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>Movies</th>
+    </tr>
+    @foreach (var movie in @Model.Movies)
+    {
+        <tr>
+            <td>@movie.Name</td>
+        </tr>
+    }
+</table>

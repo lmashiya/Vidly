@@ -33,5 +33,22 @@ namespace Vidly.Controllers
 
            return View(viewModel);
         }
+
+        public ActionResult Index()
+        {
+            var movies = new List<Movie>()
+            {
+                new Movie(){Name = "Shrek"},
+                new Movie(){Name = "John Wick"},
+                new Movie(){Name = "Mary Poppins"}
+            };
+
+            var viewModel = new RandomMovieViewModel()
+            {
+                Movies = movies
+            };
+
+            return View(viewModel);
+        }
     }
 }
