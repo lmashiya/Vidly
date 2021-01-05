@@ -5,6 +5,7 @@ namespace Vidly.Migrations
     
     public partial class AddedCustomerDateofBirth : DbMigration
     {
+        ///<inheritdoc cref="Up"/>
         public override void Up()
         {
             AddColumn("dbo.Customers", "DateOfBirth", c => c.DateTime());
