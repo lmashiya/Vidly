@@ -27,5 +27,10 @@ namespace Vidly.Models
         /// </summary>
         public short SignUpFee { get; set; }
 
+        /// <summary>
+        ///      Gets or sets a <see cref="string"/> representing membership type name.
+        /// </summary>
+        public string Name { get; set; }
+
     }
 }
