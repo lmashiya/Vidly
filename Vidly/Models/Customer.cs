@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -10,11 +11,14 @@ namespace Vidly.Models
         /// <summary>
         ///     Gets or sets an <see cref="int"/> representing the id for a customer.
         /// </summary>
-        public int Id { get; set; }
         
+        public int Id { get; set; }
+
         /// <summary>
         ///     Gets or sets a<see cref="string"/> representing the customer name.
         /// </summary>
+        [Required]
+        [StringLength(255)]
         public string Name { get; set; }
         
         /// <summary>
