@@ -26,7 +26,7 @@ namespace Vidly.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(x => x.MembershipType.DiscountRate).ToList();
+            var customers = _context.Customers.Include(x => x.MembershipType).ToList();
 
             var viewModel = new RandomMovieViewModel(){ Customers = customers};
 
