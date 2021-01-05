@@ -21,5 +21,15 @@ namespace Vidly.Models
         ///     Gets or sets a <see cref="bool"/> representing is customer subscribed to news letter.
         /// </summary>
         public bool IsSubscribedToNewsletter { get; set; }
+
+        /// <summary>
+        ///      Gets or sets a <see cref=" MembershipType"/> representing membership type for customer.
+        /// </summary>
+        public MembershipType MembershipType { get; set; }
+
+        /// <summary>
+        ///      Gets or sets a <see cref="byte"/> representing membership id foreign key.
+        /// </summary>
+        public byte MembershipTypeId { get; set; }
     }
 }
