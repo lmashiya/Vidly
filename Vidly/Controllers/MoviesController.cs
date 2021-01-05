@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,38 +11,13 @@ using Vidly.ViewModels;
 namespace Vidly.Controllers
 {
     /// <summary>
-    /// A controller for movies
+    ///     The controller for movies.
     /// </summary>
     public class MoviesController : Controller
     {
-        // GET: Movies/Random
-        public ActionResult Random()
-        {
-            var movie = new Movie(){Name = "Shrek"};
-
-            var customers = new List<Customer>()
-            {
-                new Customer() {Name = "Customer 1"},
-                new Customer() {Name = "Customer 2"}
-            };
-
-            var viewModel = new RandomMovieViewModel()
-            {
-                Customers = customers,
-                Movie = movie
-            };
-
-           return View(viewModel);
-        }
-
         public ActionResult Index()
         {
-            var movies = new List<Movie>()
-            {
-                new Movie(){Name = "Shrek"},
-                new Movie(){Name = "John Wick"},
-                new Movie(){Name = "Mary Poppins"}
-            };
+            var movies = GetMovies();
 
             var viewModel = new RandomMovieViewModel()
             {
@@ -49,6 +25,16 @@ namespace Vidly.Controllers
             };
 
             return View(viewModel);
+        }
+
+        public IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie>()
+            {
+                new Movie(){Name = "Shrek"},
+                new Movie(){Name = "John Wick"},
+                new Movie(){Name = "Mary Poppins"}
+            };
         }
     }
 }
