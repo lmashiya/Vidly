@@ -35,5 +35,10 @@ namespace Vidly.Models
         ///      Gets or sets a <see cref="byte"/> representing membership id foreign key.
         /// </summary>
         public byte MembershipTypeId { get; set; }
+
+        /// <summary>
+        ///      Gets or sets a <see cref="DateTime"/> representing customer date of birth.
+        /// </summary>
+        public DateTime? DateOfBirth { get; set; }
     }
 }

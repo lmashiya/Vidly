@@ -203,6 +203,10 @@
     <Compile Include="Migrations\202101051958235_UpdateNameMembershipTypes.Designer.cs">
       <DependentUpon>202101051958235_UpdateNameMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101052022403_AddedCustomerDateofBirth.cs" />
+    <Compile Include="Migrations\202101052022403_AddedCustomerDateofBirth.Designer.cs">
+      <DependentUpon>202101052022403_AddedCustomerDateofBirth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -314,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101051958235_UpdateNameMembershipTypes.resx">
       <DependentUpon>202101051958235_UpdateNameMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101052022403_AddedCustomerDateofBirth.resx">
+      <DependentUpon>202101052022403_AddedCustomerDateofBirth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
