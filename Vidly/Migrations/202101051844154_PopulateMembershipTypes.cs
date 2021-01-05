@@ -5,6 +5,7 @@ namespace Vidly.Migrations
     
     public partial class PopulateMembershipTypes : DbMigration
     {
+        /// <inheritdoc cref="Up"/>
         public override void Up()
         {
             Sql("Insert Into MembershipTypes (Id, SignUpFee, DurationInMonths, DiscountRate) Values (1, 0, 0, 0)");
