@@ -32,6 +32,8 @@ namespace Vidly.Controllers
         {
             var movies = _context.Movies.Include(m => m.Genre).ToList();
 
+            if (!movies.Any()) return HttpNotFound();
+
             var viewModel = new RandomMovieViewModel()
             {
                 Movies = movies
@@ -40,7 +42,7 @@ namespace Vidly.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(x => x.Id == id);
 
