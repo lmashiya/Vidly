@@ -39,6 +39,7 @@ namespace Vidly.Models
         /// <summary>
         ///      Gets or sets a <see cref="DateTime"/> representing customer date of birth.
         /// </summary>
+        [Display(Name = "Date Of Birth")]
         public DateTime? DateOfBirth { get; set; }
     }
 }
