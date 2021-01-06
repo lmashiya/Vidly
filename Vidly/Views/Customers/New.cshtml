@@ -8,11 +8,20 @@
 
 <h2>New Customer</h2>
 
-@using (Html.BeginForm("Create","Customers"))
+@using (Html.BeginForm("Create", "Customers"))
 {
     <div class="form-group">
         @Html.LabelFor(x => x.Name)
-        @Html.TextBoxFor(x => x.Name, new {@class = "form-control"})
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.DateOfBirth)
+        @Html.TextBoxFor(x => x.DateOfBirth, new { @class = "form-control" })
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(x => x.IsSubscribedToNewsletter) Subscribed to newsletter?
+        </label>
     </div>
 }
 
