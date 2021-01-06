@@ -215,6 +215,14 @@
     <Compile Include="Migrations\202101060825505_PopulateGenre.Designer.cs">
       <DependentUpon>202101060825505_PopulateGenre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101061247495_ChangeReleaseDateToDateTime.cs" />
+    <Compile Include="Migrations\202101061247495_ChangeReleaseDateToDateTime.Designer.cs">
+      <DependentUpon>202101061247495_ChangeReleaseDateToDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101061249004_ChangeReleaseDateToDateTime1.cs" />
+    <Compile Include="Migrations\202101061249004_ChangeReleaseDateToDateTime1.Designer.cs">
+      <DependentUpon>202101061249004_ChangeReleaseDateToDateTime1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -338,6 +346,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101060825505_PopulateGenre.resx">
       <DependentUpon>202101060825505_PopulateGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101061247495_ChangeReleaseDateToDateTime.resx">
+      <DependentUpon>202101061247495_ChangeReleaseDateToDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101061249004_ChangeReleaseDateToDateTime1.resx">
+      <DependentUpon>202101061249004_ChangeReleaseDateToDateTime1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

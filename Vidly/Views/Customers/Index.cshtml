@@ -1,6 +1,4 @@
-﻿@using System.Web.UI.WebControls
-@using Vidly.Models
-@model Vidly.ViewModels.RandomMovieViewModel
+﻿@model Vidly.ViewModels.RandomMovieViewModel
 @{
     ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,7 +11,7 @@
         <th>Customer</th>
         <th>Membership Type </th>
     </tr>
-    @foreach (var customer in @Model.Customers)
+    @foreach (var customer in Model.Customers)
     {
         <tr>
             <td>@Html.ActionLink(@customer.Name,"Details",new {id = customer.Id},null)</td>

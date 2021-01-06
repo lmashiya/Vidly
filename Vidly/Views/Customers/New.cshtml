@@ -1,4 +1,5 @@
 ﻿@using Vidly.Controllers
+@model Vidly.Models.Customer
 
 @{
     ViewBag.Title = "New";
@@ -7,8 +8,11 @@
 
 <h2>New Customer</h2>
 
-@using (Html.BeginForm("Create",Customers))
+@using (Html.BeginForm("Create","Customers"))
 {
-    
+    <div class="form-group">
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name, new {@class = "form-control"})
+    </div>
 }
 

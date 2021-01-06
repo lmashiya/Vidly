@@ -1,5 +1,4 @@
-﻿@using Vidly.Models
-@model Vidly.ViewModels.RandomMovieViewModel
+﻿@model Vidly.ViewModels.RandomMovieViewModel
 @{
     ViewBag.Title = "Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -16,7 +15,8 @@
     {
         <tr>
             <td>@Html.ActionLink(@movie.Name, "Details",new {id = movie.Id}, null)</td>
-            <td>@movie.Genre.</td>
+            <td>Genre : @movie.Genre.Name</td>
+            <
         </tr>
     }
 </table>
