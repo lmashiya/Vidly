@@ -1,4 +1,5 @@
-﻿@model Vidly.ViewModels.NewCustomerViewModel
+﻿@using System.Web.UI.WebControls
+@model Vidly.ViewModels.NewCustomerViewModel
 
 @{
     ViewBag.Title = "New";
@@ -21,6 +22,14 @@
         <label>
             @Html.CheckBoxFor(x => x.Customer.IsSubscribedToNewsletter) Subscribed to newsletter?
         </label>
+        <br />
+        <br/>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Customer.MembershipTypeId)
+            @Html.DropDownListFor(x => x.Customer.MembershipTypeId, 
+                new SelectList(Model.MembershipTypes,"id","Name")," ", new { @class = "form-control" })
+        </div>
     </div>
+    <button type="submit" class="btn btn-success">SAVE</button>
 }
 

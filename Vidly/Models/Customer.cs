@@ -34,6 +34,7 @@ namespace Vidly.Models
         /// <summary>
         ///      Gets or sets a <see cref="byte"/> representing membership id foreign key.
         /// </summary>
+        [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
 
         /// <summary>
