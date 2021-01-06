@@ -30,6 +30,11 @@ namespace Vidly.Models
         /// </summary>
         public DbSet<Movie> Movies { get; set; }
 
+        /// <summary>
+        ///      Gets or sets a <see cref="DbSet"/> representing membership type.
+        /// </summary>
+        public DbSet<MembershipType> MembershipTypes { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
