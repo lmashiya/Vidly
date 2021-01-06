@@ -20,7 +20,16 @@ namespace Vidly.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        /// <summary>
+        ///      Gets or sets a <see cref="DbSet"/> representing the Customers table.
+        /// </summary>
         public DbSet<Customer> Customers { get; set; }
+
+        /// <summary>
+        ///      Gets or sets a <see cref="DbSet"/> representing the Movies table.
+        /// </summary>
+        public DbSet<Movie> Movies { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
