@@ -56,8 +56,11 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Create(Customer customer)
         {
+            _context.Customers.Add(customer);
 
-            return Content("");
+            _context.SaveChanges();
+
+            return RedirectToAction("Index","Customers");
         }
     }
 }
