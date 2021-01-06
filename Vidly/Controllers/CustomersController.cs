@@ -17,7 +17,7 @@ namespace Vidly.Controllers
         {
             _context = new ApplicationDbContext();
         }
-
+        /// <inheritdoc cref="Dispose"/>
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();

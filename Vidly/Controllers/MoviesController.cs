@@ -16,18 +16,30 @@ namespace Vidly.Controllers
     /// </summary>
     public class MoviesController : Controller
     {
+        /// <summary>
+        ///     A <see cref="DbContext"/> representing the applications database context.
+        /// </summary>
         private ApplicationDbContext _context;
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="MoviesController"/> class.
+        /// </summary>
         public MoviesController()
         {
             _context = new ApplicationDbContext();
         }
 
+        /// <inheritdoc cref="Dispose"/>
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
         }
-
+        /// <summary>
+        ///     Gets a list of movies.
+        /// </summary>
+        /// <returns>
+        ///     A <see cref="ViewResult"/> with the list of movies.
+        /// </returns>
         public ActionResult Index()
         {
             var movies = _context.Movies.Include(m => m.Genre).ToList();
@@ -37,6 +49,15 @@ namespace Vidly.Controllers
             return View(movies);
         }
 
+        /// <summary>
+        ///     Gets a movie using the movie id.
+        /// </summary>
+        /// <param name="id">
+        ///     An <see cref="int"/> representing a movie id.
+        /// </param>
+        /// <returns>
+        ///     A <see cref="ViewResult"/> with a movie.
+        /// </returns>
         public ActionResult Details(int? id)
         {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(x => x.Id == id);
