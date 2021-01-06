@@ -23,7 +23,7 @@ namespace Vidly.Models
         /// <summary>
         ///  Gets or sets a <see cref="DateTime"/> representing release date of a movie.
         /// </summary>
-        public DateTime ReleaseDate { get; set; }
+        public string ReleaseDate { get; set; }
 
         /// <summary>
         ///  Gets or sets a <see cref="DateTime"/> representing date movie was added.
