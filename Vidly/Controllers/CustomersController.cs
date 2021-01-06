@@ -63,7 +63,7 @@ namespace Vidly.Controllers
             return RedirectToAction("Index","Customers");
         }
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             var customer = _context.Customers.SingleOrDefault(x => x.Id == id);
 
