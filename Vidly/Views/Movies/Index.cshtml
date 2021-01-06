@@ -1,4 +1,4 @@
-﻿@model Vidly.ViewModels.RandomMovieViewModel
+﻿@model IEnumerable<Vidly.Models.Movie>
 @{
     ViewBag.Title = "Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,7 +11,7 @@
         <th>Movies</th>
         <th>Genre</th>
     </tr>
-    @foreach (var movie in @Model.Movies)
+    @foreach (var movie in Model)
     {
         <tr>
             <td>@Html.ActionLink(@movie.Name, "Details",new {id = movie.Id}, null)</td>

@@ -34,12 +34,7 @@ namespace Vidly.Controllers
 
             if (!movies.Any()) return HttpNotFound();
 
-            var viewModel = new RandomMovieViewModel()
-            {
-                Movies = movies
-            };
-
-            return View(viewModel);
+            return View(movies);
         }
 
         public ActionResult Details(int? id)
