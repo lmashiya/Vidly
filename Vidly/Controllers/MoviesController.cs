@@ -67,6 +67,12 @@ namespace Vidly.Controllers
             return View(movie);
         }
 
+        /// <summary>
+        ///     Generates a form for new Movies.
+        /// </summary>
+        /// <returns>
+        ///     A <see cref="ViewResult"/> representing the view for new movies and the viewmodel.
+        /// </returns>
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -78,6 +84,15 @@ namespace Vidly.Controllers
             return View("MoviesForm",viewModel);
         }
 
+        /// <summary>
+        ///     Updates or adds a new movie to the database.
+        /// </summary>
+        /// <param name="movie">
+        ///     A <see cref="Movie"/> representing a movie.
+        /// </param>
+        /// <returns>
+        ///     A <see cref="RedirectResult"/> representing the view to be redirected to using then viewModel.    
+        /// </returns>
         public ActionResult Save(Movie movie)
         {
             if(movie.Id == 0)
@@ -95,7 +110,7 @@ namespace Vidly.Controllers
             }
             _context.SaveChanges();
 
-            return Content("Hello World");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int id)
