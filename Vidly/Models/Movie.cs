@@ -48,7 +48,5 @@ namespace Vidly.Models
         /// </summary>
         [Display(Name = "Genre")]
         public byte GenreId { get; set; }
-
-
     }
 }
