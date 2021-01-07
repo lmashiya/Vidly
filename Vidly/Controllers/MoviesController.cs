@@ -71,5 +71,10 @@ namespace Vidly.Controllers
         {
             return View("MoviesForm");
         }
+
+        public ActionResult Save()
+        {
+            return Content("Hello World");
+        }
     }
 }
