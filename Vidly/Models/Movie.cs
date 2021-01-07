@@ -41,12 +41,12 @@ namespace Vidly.Models
         /// <summary>
         ///  Gets or sets a <see cref="Genre"/> representing genre of a movie.
         /// </summary>
-        [Display(Name = "Genre")]
         public Genre Genre { get; set; }
 
         /// <summary>
         ///  Gets or sets a <see cref="byte"/> representing a foreign key of a genre.
         /// </summary>
+        [Display(Name = "Genre")]
         public byte GenreId { get; set; }
 
 
