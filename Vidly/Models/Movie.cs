@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -23,6 +24,7 @@ namespace Vidly.Models
         /// <summary>
         ///  Gets or sets a <see cref="DateTime"/> representing release date of a movie.
         /// </summary>
+        [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
         /// <summary>
@@ -33,11 +35,13 @@ namespace Vidly.Models
         /// <summary>
         ///  Gets or sets a <see cref="byte"/> representing number of stock for a movie.
         /// </summary>
+        [Display(Name = "Number of Stock")]
         public byte NumberOfStock { get; set; }
 
         /// <summary>
         ///  Gets or sets a <see cref="Genre"/> representing genre of a movie.
         /// </summary>
+        [Display(Name = "Genre")]
         public Genre Genre { get; set; }
 
         /// <summary>
