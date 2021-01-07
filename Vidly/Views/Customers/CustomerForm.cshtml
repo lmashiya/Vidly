@@ -28,6 +28,7 @@
             @Html.CheckBoxFor(x => x.Customer.IsSubscribedToNewsletter) Subscribed to newsletter?
         </label>
     </div>
+    @Html.HiddenFor(x => x.Customer.Id)
     <button type="submit" class="btn btn-success">SAVE</button>
 }
 
