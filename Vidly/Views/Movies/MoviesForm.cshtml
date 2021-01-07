@@ -6,11 +6,26 @@
 
 <h2>New Movie</h2>
 
-@using (Html.BeginForm("Save","Movies"))
+@using (Html.BeginForm("Save", "Movies"))
 {
     <div class="form-group">
-        
+        @Html.LabelFor(x => x.Movie.Name)
+        @Html.TextBoxFor(x => x.Movie.Name, new { @class = "form-control" })
     </div>
-    
+    <div class="form-group">
+        @Html.LabelFor(x => x.Movie.ReleaseDate)
+        @Html.TextBoxFor(x => x.Movie.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Movie.GenreId)
+        @Html.DropDownListFor(x => x.Movie.GenreId,
+            new SelectList(Model.Genres, "id", "Name"), "", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Movie.NumberOfStock)
+        @Html.TextBoxFor(x => x.Movie.NumberOfStock, "{0:d MMM yyyy}", new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(x => x.Movie.Id)
+    <button type="submit" class="btn btn-success"> Save </button>
 }
 
