@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Movie.NumberOfStock)
-        @Html.TextBoxFor(x => x.Movie.NumberOfStock, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.Movie.NumberOfStock,  new { @class = "form-control" })
     </div>
     @Html.HiddenFor(x => x.Movie.Id)
     <button type="submit" class="btn btn-success"> Save </button>
