@@ -4,7 +4,7 @@ using Vidly.Models;
 
 namespace Vidly.Validations
 {
-    public class Min18YearsIfMember : ValidationAttribute
+    public class Min18YearsIfMemberValidation : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {

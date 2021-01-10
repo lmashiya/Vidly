@@ -39,7 +39,7 @@ namespace Vidly.Models
         ///      Gets or sets a <see cref="DateTime"/> representing customer date of birth.
         /// </summary>
         [Display(Name = "Date Of Birth")]
-        [Min18YearsIfMember]   
+        [Min18YearsIfMemberValidation]   
         public DateTime? DateOfBirth { get; set; }
     }
 }

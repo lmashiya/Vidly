@@ -14,6 +14,7 @@ namespace Vidly.Models
         /// <summary>
         /// Gets or sets a <see cref="string"/> representing the name of a movie.
         /// </summary>
+        [Required]
         public string Name { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace Vidly.Models
         ///  Gets or sets a <see cref="DateTime"/> representing release date of a movie.
         /// </summary>
         [Display(Name = "Release Date")]
+        [Required]
         public DateTime ReleaseDate { get; set; }
 
         /// <summary>
@@ -36,6 +38,7 @@ namespace Vidly.Models
         ///  Gets or sets a <see cref="byte"/> representing number of stock for a movie.
         /// </summary>
         [Display(Name = "Number of Stock")]
+        [Required]
         public byte NumberOfStock { get; set; }
 
         /// <summary>
@@ -47,6 +50,7 @@ namespace Vidly.Models
         ///  Gets or sets a <see cref="byte"/> representing a foreign key of a genre.
         /// </summary>
         [Display(Name = "Genre")]
+        [Required]
         public byte GenreId { get; set; }
     }
 }
