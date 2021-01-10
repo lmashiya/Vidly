@@ -223,6 +223,10 @@
     <Compile Include="Migrations\202101061249004_ChangeReleaseDateToDateTime1.Designer.cs">
       <DependentUpon>202101061249004_ChangeReleaseDateToDateTime1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101101738302_AddedRequiredAnnotationsForMovie.cs" />
+    <Compile Include="Migrations\202101101738302_AddedRequiredAnnotationsForMovie.Designer.cs">
+      <DependentUpon>202101101738302_AddedRequiredAnnotationsForMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -357,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101061249004_ChangeReleaseDateToDateTime1.resx">
       <DependentUpon>202101061249004_ChangeReleaseDateToDateTime1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101738302_AddedRequiredAnnotationsForMovie.resx">
+      <DependentUpon>202101101738302_AddedRequiredAnnotationsForMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
