@@ -93,6 +93,8 @@ namespace Vidly.Controllers
         /// <returns>
         ///     A <see cref="RedirectResult"/> representing the view to be redirected to using then viewModel.    
         /// </returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
             if(movie.Id == 0)
