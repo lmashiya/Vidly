@@ -3,10 +3,8 @@
     ViewBag.Title = "MoviesForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@{
-    var heading = (Model.Id == null  || Model.Id == 0) ? "New Movie" : "Edit Movie";
-}
-<h2>@heading</h2>
+
+<h2>@Model.Title</h2>
 
 @using (Html.BeginForm("Save", "Movies"))
 {

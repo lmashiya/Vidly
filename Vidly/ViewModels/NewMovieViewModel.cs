@@ -61,5 +61,16 @@ namespace Vidly.ViewModels
             ReleaseDate = movie.ReleaseDate;
             GenreId = movie.GenreId;
         }
+
+        /// <summary>
+        ///     Gets or sets <see cref="string"/> representing the view title.
+        /// </summary>
+        public string Title
+        {
+            get
+            {
+                return Id == 0 ? "New Movie" : "Edit Movie";
+            }
+        }
     }
 }
