@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Vidly.Validations;
 
 namespace Vidly.Models
 {
@@ -38,6 +39,7 @@ namespace Vidly.Models
         ///  Gets or sets a <see cref="byte"/> representing number of stock for a movie.
         /// </summary>
         [Display(Name = "Number of Stock")]
+        [StockNumberValidation]
         [Required]
         public byte NumberOfStock { get; set; }
 
