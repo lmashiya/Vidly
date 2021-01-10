@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Vidly.Validations;
 
 namespace Vidly.Models
 {
@@ -41,6 +42,7 @@ namespace Vidly.Models
         ///      Gets or sets a <see cref="DateTime"/> representing customer date of birth.
         /// </summary>
         [Display(Name = "Date Of Birth")]
+        [Min18YearsIfMember]   
         public DateTime? DateOfBirth { get; set; }
     }
 }
