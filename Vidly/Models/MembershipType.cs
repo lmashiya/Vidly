@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.Ajax.Utilities;
 
 namespace Vidly.Models
 {
@@ -31,6 +32,17 @@ namespace Vidly.Models
         ///      Gets or sets a <see cref="string"/> representing membership type name.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        ///  Sets a <see cref="byte"/> representing a membership type id.
+        /// </summary>
+        public static readonly byte Unknown = 0;
+
+        /// <summary>
+        ///  Sets a <see cref="byte"/> representing a membership type id.
+        /// </summary>
+        public static readonly byte PayAsYouGo = 1;
+
 
     }
 }

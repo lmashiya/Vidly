@@ -25,6 +25,7 @@
         @Html.LabelFor(x => x.Customer.MembershipTypeId)
         @Html.DropDownListFor(x => x.Customer.MembershipTypeId,
             new SelectList(Model.MembershipTypes, "id", "Name"), " ", new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Customer.MembershipTypeId)
     </div>
     <div class="checkbox">
         <label>
