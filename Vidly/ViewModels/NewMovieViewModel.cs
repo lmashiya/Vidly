@@ -60,17 +60,12 @@ namespace Vidly.ViewModels
             Name = movie.Name;
             ReleaseDate = movie.ReleaseDate;
             GenreId = movie.GenreId;
+            NumberOfStock = movie.NumberOfStock;
         }
 
         /// <summary>
         ///     Gets or sets <see cref="string"/> representing the view title.
         /// </summary>
-        public string Title
-        {
-            get
-            {
-                return Id == 0 ? "New Movie" : "Edit Movie";
-            }
-        }
+        public string Title => Id == 0 ? "New Movie" : "Edit Movie";
     }
 }

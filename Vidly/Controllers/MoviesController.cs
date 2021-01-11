@@ -71,7 +71,7 @@ namespace Vidly.Controllers
         ///     Generates a form for new Movies.
         /// </summary>
         /// <returns>
-        ///     A <see cref="ViewResult"/> representing the view for new movies and the viewmodel.
+        ///     A <see cref="ViewResult"/> representing the view for new movies including the viewmodel.
         /// </returns>
         public ActionResult New()
         {
@@ -91,7 +91,7 @@ namespace Vidly.Controllers
         ///     A <see cref="Movie"/> representing a movie.
         /// </param>
         /// <returns>
-        ///     A <see cref="RedirectResult"/> representing the view to be redirected to using then viewModel.    
+        ///     A <see cref="RedirectResult"/> representing the view to be redirected to.    
         /// </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
