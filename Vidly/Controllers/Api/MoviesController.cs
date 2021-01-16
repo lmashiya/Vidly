@@ -20,14 +20,15 @@ namespace Vidly.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            _context.Dispose();
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    _context.Dispose();
+        //}
 
         public IHttpActionResult GetMovies()
         {
-            return Ok(_context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>));
+            var movieDtoList = _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+            return Ok(movieDtoList);
         }
 
         public IHttpActionResult GetMovie(int id)
@@ -39,6 +40,7 @@ namespace Vidly.Controllers.Api
                 return NotFound();
             }
 
+            var m = Mapper.Map<Movie, MovieDto>(movie);
             return Ok(Mapper.Map<Movie, MovieDto>(movie));
         }
 
@@ -47,7 +49,9 @@ namespace Vidly.Controllers.Api
         {
             if (!ModelState.IsValid) return BadRequest();
 
+            movieDto.DateAdded = DateTime.Now;
             var movie = Mapper.Map<MovieDto, Movie>(movieDto);
+            
 
             _context.Movies.Add(movie);
             _context.SaveChanges();
@@ -56,10 +60,11 @@ namespace Vidly.Controllers.Api
 
             return Created( new Uri($"{Request.RequestUri}/{movieDto.Id}"), movieDto );
         }
-
+        //Put api/Movies/1
+        [HttpPut]
         public IHttpActionResult Edit(MovieDto movieDto, int id)
         {
-            var movieInDb = _context.Movies.Single(x => x.Id == id);
+            var movieInDb = _context.Movies.SingleOrDefault(x => x.Id == id);
 
             if (!ModelState.IsValid) return BadRequest();
             if (movieInDb == null) return NotFound();
@@ -68,9 +73,10 @@ namespace Vidly.Controllers.Api
 
             _context.SaveChanges();
 
-            return Ok();
+            return Ok(movieDto);
         }
 
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
             var movieInDb = _context.Movies.SingleOrDefault();

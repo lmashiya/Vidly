@@ -8,15 +8,15 @@ namespace Vidly.App_Start
     public class MovieDto
     {
         /// <summary>
+        /// Gets or sets an <see cref="int"/> representing the id of a movie.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// Gets or sets a <see cref="string"/> representing the name of a movie.
         /// </summary>
         [Required]
         public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets an <see cref="int"/> representing the id of a movie.
-        /// </summary>
-        public int Id { get; set; }
 
         /// <summary>
         ///  Gets or sets a <see cref="DateTime"/> representing release date of a movie.

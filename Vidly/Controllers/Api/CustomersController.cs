@@ -23,7 +23,7 @@ namespace Vidly.Controllers.Api
 
         public IHttpActionResult GetCustomer(int id)
         {
-            var customer = _context.Customers.SingleOrDefault(x => x.Id == id);
+            var customer = _context.Customers.Single(x => x.Id == id);
 
             if (customer == null) return NotFound();
 
