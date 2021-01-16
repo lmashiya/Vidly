@@ -21,23 +21,25 @@ namespace Vidly.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        public CustomerDto GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(x => x.Id == id);
 
-            return Mapper.Map<Customer, CustomerDto>(customer) ?? throw new HttpResponseException(HttpStatusCode.NotFound);
+            if (customer == null) return NotFound();
+
+            return Ok(Mapper.Map<Customer, CustomerDto>(customer));
         }
 
         
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IHttpActionResult GetCustomers()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
+            return Ok( _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>));
         }
 
         [HttpPost]
-        public CustomerDto CreateCustomer(CustomerDto customerDto)
+        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
-            if (!ModelState.IsValid) throw new HttpResponseException(HttpStatusCode.BadRequest);
+            if (!ModelState.IsValid) return BadRequest();
 
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
 
@@ -45,11 +47,11 @@ namespace Vidly.Controllers.Api
             _context.SaveChanges();
 
             customerDto.Id = customer.Id;
-            return customerDto;
+            return Created(new Uri($"{Request.RequestUri}/{customer.Id}"), customerDto );
         }
 
         [HttpPut]
-        public void EditCustomer(int id,CustomerDto  customerDto)
+        public IHttpActionResult EditCustomer(int id,CustomerDto  customerDto)
         {
             var customerInDb = _context.Customers.SingleOrDefault(x => x.Id == id);
 
@@ -59,10 +61,11 @@ namespace Vidly.Controllers.Api
             Mapper.Map(customerDto, customerInDb);
 
             _context.SaveChanges();
+            return Ok();
         }
 
         [HttpDelete]
-        public void DeleteCustomer(int id)
+        public IHttpActionResult DeleteCustomer(int id)
         {
             var customerInDb = _context.Customers.SingleOrDefault(x => x.Id == id);
 
@@ -70,6 +73,7 @@ namespace Vidly.Controllers.Api
 
             _context.Customers.Remove(customerInDb);
             _context.SaveChanges();
+            return Ok();
         }
     }
 }
