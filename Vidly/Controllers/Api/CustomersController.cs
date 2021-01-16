@@ -28,6 +28,7 @@ namespace Vidly.Controllers.Api
             return Mapper.Map<Customer, CustomerDto>(customer) ?? throw new HttpResponseException(HttpStatusCode.NotFound);
         }
 
+        
         public IEnumerable<CustomerDto> GetCustomers()
         {
             return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
