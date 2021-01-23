@@ -32,7 +32,10 @@
 {
     <script>
         $(document).ready(function() {
-            
+            $("#customers .js-delete").on("click",
+                function() {
+                    confirm("Are you sure you want to delete ?");
+                });
         });
     </script>
 }
