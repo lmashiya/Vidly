@@ -59,7 +59,7 @@
                                     url: "/api/customers/" + button.attr("data-customer-id"),
                                     Method: "DELETE",
                                     success: function() {
-                                        customersTable.row(button.parents("tr")).remove();
+                                        customersTable.row(button.parents("tr")).remove().draw();
                                     }
                                 });
                             }
