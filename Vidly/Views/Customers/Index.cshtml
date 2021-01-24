@@ -24,7 +24,7 @@
 {
     <script>
         $(document).ready(function() {
-            $("#customers").DataTable({
+           var customersTable = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc: ""
@@ -59,7 +59,7 @@
                                     url: "/api/customers/" + button.attr("data-customer-id"),
                                     Method: "DELETE",
                                     success: function() {
-                                        button.parents("tr").remove();
+                                        customersTable.row(button.parents("tr")).remove();
                                     }
                                 });
                             }
