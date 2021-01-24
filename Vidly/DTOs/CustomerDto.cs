@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Security;
 
 namespace Vidly.DTOs
 {
@@ -33,5 +34,7 @@ namespace Vidly.DTOs
         /// </summary>
         //[Min18YearsIfMemberValidation]
         public DateTime? DateOfBirth { get; set; }
+
+        public MembershipTypeDto MembershipType { get; set; }
     }
 }
