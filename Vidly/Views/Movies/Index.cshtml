@@ -20,7 +20,7 @@
             <tr>
                 <td>@Html.ActionLink(@movie.Name, "Edit", new { id = movie.Id }, null)</td>
                 <td>@movie.Genre.Name</td>
-                <td><button class="btn-link js-delete" data-movie-id= @movie.Id >Delete</button> </td>
+                <td><button class="btn-link js-delete" data-movie-id=@movie.Id>Delete</button> </td>
             </tr>
         }
     </tbody>
@@ -33,7 +33,29 @@
 {
     <script>
         $(document).ready(function() {
-            var table = $("#movieTable").DataTable();
+            var table = $("#movieTable").DataTable({
+                ajax: {
+                    url: "/api/movies",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function(data, type, movie) {
+                            return "<a href='/api/movies/edit/" + movie.id + "'>" + movie.name + "</a>";
+                        }
+                    },
+                    {
+                        data: "genre.name"
+                    },
+                    {
+                        data: "id",
+                        render: function(data) {
+                            return "<button class='btn-link js-delete' data-movie-id=" + data + ">Delete</button>";
+                        }
+                    }
+                ]
+            });
 
             $("#movieTable").on("click",
                 ".js-delete",
