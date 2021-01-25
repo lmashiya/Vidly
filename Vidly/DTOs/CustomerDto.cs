@@ -35,6 +35,9 @@ namespace Vidly.DTOs
         //[Min18YearsIfMemberValidation]
         public DateTime? DateOfBirth { get; set; }
 
+        /// <summary>
+        ///      Gets or sets a <see cref="MembershipTypeDto"/> representing membership type.
+        /// </summary>
         public MembershipTypeDto MembershipType { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Vidly.DTOs;
 using Vidly.Models;
 using Vidly.Validations;
 
@@ -44,5 +45,10 @@ namespace Vidly.App_Start
         [Display(Name = "Genre")]
         [Required]
         public byte GenreId { get; set; }
+
+        /// <summary>
+        ///  Gets or sets a <see cref="GenreDto"/> representing a genre of a movie.
+        /// </summary>
+        public GenreDto Genre { get; set; }
     }
 }
