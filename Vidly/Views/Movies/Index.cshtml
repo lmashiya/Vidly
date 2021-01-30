@@ -15,14 +15,6 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var movie in Model)
-        {
-            <tr>
-                <td>@Html.ActionLink(@movie.Name, "Edit", new { id = movie.Id }, null)</td>
-                <td>@movie.Genre.Name</td>
-                <td><button class="btn-link js-delete" data-movie-id=@movie.Id>Delete</button> </td>
-            </tr>
-        }
     </tbody>
 
 </table>
