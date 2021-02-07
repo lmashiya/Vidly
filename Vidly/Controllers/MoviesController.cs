@@ -45,8 +45,7 @@ namespace Vidly.Controllers
             var movies = _context.Movies.Include(m => m.Genre).ToList();
 
             if (!movies.Any()) return HttpNotFound();
-
-            return View(movies);
+            return View(User.IsInRole("CanManageMovies") ? "List" : "ReadOnlyList", movies);
         }
 
         /// <summary>
